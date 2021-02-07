@@ -1,0 +1,151 @@
+#player {
+    width: 128px;
+    height: 178px;
+    background-color: transparent;
+    /* border: 1px solid black; */
+    position: absolute;
+}
+
+#playerShadow {
+    width: 145px;
+    height: 38px;
+    background-image: url('../objects/playerShadow.png');
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 65px;
+    left: 0px;
+}
+
+#playerFoot {
+    width: 115px;
+    height: 49px;
+    background-image: url("../objects/playerFoot.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 130px;
+    left: 0;
+}
+
+#wheelLG {
+    width: 30px;
+    height: 30px;
+    background-image: url("../objects/wheelLG.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+}
+
+#wheelMD {
+    width: 25px;
+    height: 25px;
+    background-image: url("../objects/wheelMD.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 3px;
+    left: 47px;
+}
+
+#wheelSM {
+    width: 20px;
+    height: 20px;
+    background-image: url("../objects/wheelSM.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 3px;
+    left: 91px;
+}
+
+.animateWheelLeft {
+    animation: wheelLeft 1s infinite linear;
+}
+
+@keyframes wheelLeft {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.animateWheelRight {
+    animation: wheelRight 1s infinite linear;
+}
+
+@keyframes wheelRight {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#playerBody {
+    width: 75px;
+    height: 109px;
+    background-image: url("../objects/playerBody.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 36px;
+    left: 15px;
+}
+
+#playerHand {
+    width: 93px;
+    height: 48px;
+    background-image: url("../objects/playerHand.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 56px;
+    left: 36px;
+}
+
+#playerHead {
+    width: 66px;
+    height: 38px;
+    background-image: url("../objects/playerHead.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 17px;
+}
+
+#shootEffect {
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background-image: url("../objects/shootingEffectRight.png");
+    background-size: cover;
+    /* background: blue; */
+    transform: scaleX(-1) !important;
+    position: absolute;
+}
+
+#laserOval {
+    width: 32px;
+    height: 32px;
+    background-image: url("../objects/laserOvalRight.png");
+    /* background-color: blue; */
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.scaleXLeft {
+    transform: scaleX(-1) !important;
+}
+
+.scaleXRight {
+    transform: scaleX(1) !important;
+}
+
+#laser {
+    width: 48px;
+    height: 8px;
+    background-image: url("../objects/laserRight.png");
+    /* background-color: blue; */
+    background-repeat: no-repeat;
+    position: absolute;
+}
