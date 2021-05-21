@@ -1,6 +1,6 @@
 # StarShipWars
 
-#Use buttons to play
+# Use buttons to play
 
 . Left and right arrows to move
 
