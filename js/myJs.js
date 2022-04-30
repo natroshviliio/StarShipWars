@@ -1,25 +1,29 @@
 
-var KEY_LEFT = 37;
-var KEY_UP = 38;
-var KEY_RIGHT = 39
-var KEY_DOWN = 40;
-var KEY_SPACE = 32;
-var KEY_Z = 90;
-var KEY_X = 88;
+const KEY_LEFT = 37;
+const KEY_UP = 38;
+const KEY_RIGHT = 39
+const KEY_DOWN = 40;
+const KEY_SPACE = 32;
+const KEY_Z = 90;
+const KEY_X = 88;
 
-var PLAYER_MOVEMENT = 4;
-var PLAYER_BOTTOM = 80;
-var LASER_SPEED = 50;
-var SHOOTING_INTERVAL = 10;
-var BOOSTED_SHOOT = 1;
+let PLAYER_MOVEMENT = 4;
+let PLAYER_BOTTOM = 80;
+let LASER_SPEED = 50;
+let SHOOTING_INTERVAL = 10;
+let BOOSTED_SHOOT = 1;
 
-var JUMP_HEIGHT = 20;
-var JUMP = 20;
+let JUMP_HEIGHT = 20;
+let JUMP = 20;
 
-var lastLoopRun = 0;
+let lastLoopRun = 0;
 
+const closeTutorial = () => {
+    let tutorial = document.querySelector(".tutorial");
+    tutorial.style.display = "none";
+}
 
-var createSprite = function (element, x, y, w, h) {
+const createSprite = (element, x, y, w, h) => {
     var sprite = new Object();
     sprite.element = element;
     sprite.x = x;
@@ -30,7 +34,7 @@ var createSprite = function (element, x, y, w, h) {
 }
 
 
-var controller = new Object();
+let controller = new Object();
 
 function toggleKey(keyCode, isPressed) {
     if (keyCode == KEY_LEFT) {
@@ -56,7 +60,7 @@ function toggleKey(keyCode, isPressed) {
     }
 }
 
-var item = new Object();
+let item = new Object();
 item.isPlayerLeft = false;
 item.isplayerRight = true;
 item.shootingFireCount = 0;
@@ -68,9 +72,9 @@ item.effectYRegulator = 0;
 item.bodyBackground = document.getElementById('Bbackground');
 item.CurrentWindowWidth = 1366 - 47; //parseInt(getComputedStyle(item.bodyBackground).getPropertyValue('width'));
 
-var bodyRightIncreement = 0;
-var headRight = 17;
-var handRight = 36;
+let bodyRightIncreement = 0;
+let headRight = 17;
+let handRight = 36;
 function playerRight() {
     player.x += PLAYER_MOVEMENT;
     mainObject.style.transform = 'scaleX(1)';
@@ -101,9 +105,9 @@ function playerRight() {
     }
 }
 
-var bodyLeftIncreement = 0;
-var headLeft = 17;
-var handLeft = 36;
+let bodyLeftIncreement = 0;
+let headLeft = 17;
+let handLeft = 36;
 function playerLeft() {
     player.x -= PLAYER_MOVEMENT;
     item.playerShadowYDecreement = -0.4;
@@ -135,8 +139,8 @@ function playerLeft() {
     }
 }
 
-var handAngle = 0;
-var handTop = 56;
+let handAngle = 0;
+let handTop = 56;
 function handUP() {
     handAngle--;
     handTop -= 0.6;
@@ -178,7 +182,7 @@ function Jump() {
     }
 }
 
-var opacityDecreement = 0;
+let opacityDecreement = 0;
 function shootingObject(_effectYRegulator, _bodyActionBeforeShoot, _headActionBeforeShoot,
     _laserOvalXRegulator, _laserOvalYController, _laserOvalYAngleRegulator, _laserOvalAngleRegulator,
     _shootingEffAngleYRegulator, _shootingEffXRegulator, _shootingEffWAnimationIncreement, _shootingEffHAnimationIncreement,
@@ -423,25 +427,25 @@ function loop() {
 }
 
 
-var player = createSprite('player', 200, PLAYER_BOTTOM, null, null);
-var mainObject = document.getElementById('player');
-var playerShadow = createSprite('playerShadow', 180, 65, 145, 38);
-var playerFoot = document.getElementById('playerFoot');
-var wheelLG = document.getElementById('wheelLG');
-var wheelMD = document.getElementById('wheelMD');
-var wheelSM = document.getElementById('wheelSM');
-var playerBody = document.getElementById('playerBody');
-var playerHand = document.getElementById('playerHand');
-var playerHead = document.getElementById('playerHead');
+const player = createSprite('player', 200, PLAYER_BOTTOM, null, null);
+const mainObject = document.getElementById('player');
+const playerShadow = createSprite('playerShadow', 180, 65, 145, 38);
+const playerFoot = document.getElementById('playerFoot');
+const wheelLG = document.getElementById('wheelLG');
+const wheelMD = document.getElementById('wheelMD');
+const wheelSM = document.getElementById('wheelSM');
+const playerBody = document.getElementById('playerBody');
+const playerHand = document.getElementById('playerHand');
+const playerHead = document.getElementById('playerHead');
 
-var laser = createSprite('laser', -100, -2000, null, null);
-var laserObject = document.getElementById('laser');
-var laserSound = new Audio('objects/laserSound.mp3');
-var shootEffect = createSprite('shootEffect', 50, 0, null, null);
-var shootObject = document.getElementById('shootEffect');
-var laserOval = createSprite('laserOval', -100, -20, null, null);
-var ovalObject = document.getElementById('laserOval');
+const laser = createSprite('laser', -100, -2000, null, null);
+const laserObject = document.getElementById('laser');
+const laserSound = new Audio('objects/laserSound.mp3');
+const shootEffect = createSprite('shootEffect', 50, 0, null, null);
+const shootObject = document.getElementById('shootEffect');
+const laserOval = createSprite('laserOval', -100, -20, null, null);
+const ovalObject = document.getElementById('laserOval');
 
-var planets = createSprite('planets', 0, null, null, null);
+const planets = createSprite('planets', 0, null, null, null);
 
 loop();
